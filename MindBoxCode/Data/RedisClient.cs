@@ -1,13 +1,14 @@
-﻿using MindBoxCode.DAL.Abstractions;
+﻿using MindBoxCode.Data.Abstractions;
 using System.Threading.Tasks;
 
-namespace MindBoxCode.DAL
+namespace MindBoxCode.Data
 {
     public class RedisClient : IRedisClient
     {
         public async Task<int> Get(string type)
         {
             //await some implementation
+            await Task.Delay(1);
             return 1;
         }
 

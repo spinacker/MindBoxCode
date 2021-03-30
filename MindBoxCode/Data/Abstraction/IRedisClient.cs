@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace MindBoxCode.DAL.Abstractions
+namespace MindBoxCode.Data.Abstractions
 {
 	public interface IRedisClient
 	{

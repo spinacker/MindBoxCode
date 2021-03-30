@@ -1,5 +1,4 @@
 ﻿using MindBoxCode.Abstractions;
-using MindBoxCode.Domain;
 
 namespace MindBoxCode.Infrastructure
 {

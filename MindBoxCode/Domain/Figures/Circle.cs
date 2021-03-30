@@ -7,9 +7,9 @@ namespace MindBoxCode.Abstractions
 {
 	public class Circle : Figure
 	{
-		public Circle(float sideA)
+		public Circle(float radius)
 		{
-			SideA = sideA;
+			SideA = radius;
 			Validate();
 		}
 

@@ -1,9 +1,8 @@
-﻿using MindBoxCode.DAL.Abstractions;
-using MindBoxCode.Domain;
+﻿using MindBoxCode.Data.Abstractions;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace MindBoxCode.DAL
+namespace MindBoxCode.Data
 {
 	public class FiguresStorage : IFiguresStorage
 	{
@@ -20,6 +19,18 @@ namespace MindBoxCode.DAL
 			return await _redisClient.Get(type) >= count;
 		}
 
+		public async Task<bool> CheckIfListAvailable(IEnumerable<(string, int)> positions)
+		{
+			foreach (var position in positions)
+			{
+				if (!await CheckIfAvailable(position.Item1, position.Item2))
+				{
+					return false;
+				}
+			}
+			return true;
+		}
+
 		public async Task Reserve(string type, int count)
 		{
 			var current = await _redisClient.Get(type);
@@ -34,18 +45,5 @@ namespace MindBoxCode.DAL
 				await Reserve(position.Item1, position.Item2);
 			}
 		}
-
-		public async Task<bool> CheckIfListAvailable(IEnumerable<(string, int)> positions)
-		{
-			foreach (var position in positions)
-			{
-				if (!await CheckIfAvailable(position.Item1, position.Item2))
-				{
-					return false;
-				}
-			}
-			return true;
-		}
 	}
-
 }

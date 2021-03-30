@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MindBoxCode.Domain
+namespace MindBoxCode.Infrastructure
 {
 	public class Position
 	{
@@ -15,10 +15,5 @@ namespace MindBoxCode.Domain
 
 		public int Count { get; set; }
 
-		public void Deconstruct(out string type, out int count)
-		{
-			type = Type;
-			count = Count;
-		}
 	}
 }

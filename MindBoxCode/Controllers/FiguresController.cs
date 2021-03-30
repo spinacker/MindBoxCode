@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using MindBoxCode.Domain;
 using MindBoxCode.Infrastructure;
 using System;
 using System.Threading.Tasks;

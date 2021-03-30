@@ -1,11 +1,11 @@
-﻿using MindBoxCode.Domain;
+﻿using MindBoxCode.Infrastructure;
 using System.Threading.Tasks;
 
-namespace MindBoxCode.DAL.Abstractions
+namespace MindBoxCode.Data.Abstractions
 {
 	public interface IOrderStorage
 	{
 		// сохраняет оформленный заказ и возвращает сумму
-		Task<decimal> Save(Order order);
+		Task<double> Save(Order order);
 	}
 }

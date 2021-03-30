@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace MindBoxCode.Domain
+namespace MindBoxCode.Infrastructure
 {
 	public class Cart
 	{
